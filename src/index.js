@@ -1,51 +1,65 @@
 /**
- * Represents a book.
  * @constructor
- * @param {string} title - The title of the book.
- * @param {string} author - The author of the book.
+ * @param {number} id - 아이디 (required)
+ * @param {string} content -  내용 (required)
+ * @param {boolean} isFinish - 완료여부 (required)
+ * @param {string} category - 카테고리 (required)
+ * @param {string[]} [tags] - 태그들 (optional)
  */
-function Book(title, author) {}
+function Todo(id, content, isFinish, category, tags) {}
 
 /**
- * Both of these will link to the bar function.
- * @see {@link bar}
- * @see bar
+ * read all todo
+ * @func readAllTodo
  */
-function foo() {}
-
-// Use the inline {@link} tag to include a link within a free-form description.
-/**
- * @see {@link foo} for further information.
- * @see {@link http://github.com|GitHub}
- */
-function bar() {}
+function readAllTodo() {}
 
 /**
- * Generic dairy product.
- * @constructor
+ * read todo by id
+ * @func readTodoById
+ * @param {number} id - 아이디
  */
-function DairyProduct() {}
+function readTodoById(id) {}
 
 /**
- * Check whether the dairy product is solid at room temperature.
- * @abstract
- * @return {boolean}
+ * create todo
+ * @func createTodo
+ * @param {number} id - 아이디
+ * @param {string} content -  내용
+ * @param {boolean} isFinish - 완료여부
+ * @param {string} category - 카테고리
+ * @param {string[]} [tags] - 태그들
  */
-DairyProduct.prototype.isSolid = function () {
-	throw new Error('must be implemented by subclass!');
-};
+function createTodo(id, content, isFinish, category, tags) {}
 
 /**
- * Cool, refreshing milk.
- * @constructor
- * @augments DairyProduct
+ * update todo
+ * @func updateTodoContent
+ * @param {number} id - 아이디
+ * @param {string} content -  내용
+ * @param {boolean} isFinish - 완료여부
+ * @param {string} category - 카테고리
+ * @param {string[]} [tags] - 태그들
  */
-function Milk() {}
+function updateTodoContent(id, content, isFinish, category, tags) {}
 
 /**
- * Check whether milk is solid at room temperature.
- * @return {boolean} Always returns false.
+ * delete all todos
+ * @func deleteAllTodo
  */
-Milk.prototype.isSolid = function () {
-	return false;
-};
+function deleteAllTodo() {}
+
+/**
+ * delete todo by id
+ * @func deleteTodoById
+ * @param {number} id - 아이디
+ */
+function deleteTodoById(id) {}
+
+/**
+ * delete all tags
+ * @func deleteTodoTags
+ * @param {number} id - 아이디
+ * @param {string[]} [tags] - 태그들
+ */
+function deleteTodoTags(id, tags) {}
